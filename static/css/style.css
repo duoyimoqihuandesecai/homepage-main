@@ -586,6 +586,208 @@ body {
 
 }
 
+.experiencePanel {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+.experienceTools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.experienceSearch {
+    flex: 1 1 280px;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 16px;
+    border-radius: 8px;
+    background: var(--item_bg_color);
+    backdrop-filter: blur(var(--card_filter));
+    -webkit-backdrop-filter: blur(var(--card_filter));
+}
+
+.experienceSearch svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    fill: var(--fill);
+    opacity: 0.8;
+}
+
+.experienceSearch input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: var(--main_text_color);
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.experienceSearch input::placeholder {
+    color: var(--item_left_text_color);
+}
+
+.experienceFilters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.filterChip {
+    min-width: 72px;
+    height: 38px;
+    padding: 0 14px;
+    border: 0;
+    border-radius: 8px;
+    background: var(--item_bg_color);
+    color: var(--main_text_color);
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
+    backdrop-filter: blur(var(--card_filter));
+    -webkit-backdrop-filter: blur(var(--card_filter));
+}
+
+.filterChip.active {
+    background: var(--text_bg_color);
+    color: var(--item_left_title_color);
+}
+
+.experienceMeta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    color: var(--item_left_text_color);
+    font-size: 13px;
+}
+
+.experienceMeta p {
+    color: var(--main_text_color);
+    font-size: 14px;
+}
+
+.experienceGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.experienceCard {
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 18px;
+    border-radius: 8px;
+    background: var(--item_bg_color);
+    backdrop-filter: blur(var(--card_filter));
+    -webkit-backdrop-filter: blur(var(--card_filter));
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.experienceCard:hover {
+    transform: translateY(-2px);
+    background: var(--item_hover_color);
+}
+
+.experienceTop {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.experienceTitle h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--item_left_title_color);
+}
+
+.experienceTitle p {
+    margin-top: 6px;
+    font-size: 13px;
+    color: var(--item_left_text_color);
+}
+
+.experienceBadge {
+    flex-shrink: 0;
+    min-width: 84px;
+    height: 32px;
+    padding: 0 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: var(--text_bg_color);
+    color: var(--purple_text_color);
+    font-size: 12px;
+}
+
+.experienceDesc {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--main_text_color);
+}
+
+.experienceHighlights {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.experienceMetric {
+    padding: 12px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.experienceMetric strong {
+    display: block;
+    font-size: 16px;
+    color: var(--item_left_title_color);
+}
+
+.experienceMetric span {
+    display: block;
+    margin-top: 4px;
+    font-size: 12px;
+    color: var(--item_left_text_color);
+}
+
+.experienceTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.experienceTag {
+    min-height: 28px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: var(--left_tag_item);
+    color: var(--main_text_color);
+    font-size: 12px;
+}
+
+.experienceEmpty {
+    grid-column: 1 / -1;
+    padding: 28px 18px;
+    border-radius: 8px;
+    background: var(--item_bg_color);
+    color: var(--item_left_text_color);
+    text-align: center;
+}
+
 .skill {
     padding: 25px;
     width: 100%;
@@ -628,6 +830,9 @@ footer {
 .projectItem{
     margin: 10px;
 }
+    .experienceGrid {
+        grid-template-columns: 1fr;
+    }
     .b {
 
         width: calc(50% - 20px);
@@ -716,6 +921,28 @@ footer {
 
     .skill #skillPc {
         display: none;
+    }
+
+    .experienceTools {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .experienceFilters {
+        width: 100%;
+    }
+
+    .filterChip {
+        flex: 1 1 calc(33.333% - 8px);
+    }
+
+    .experienceMeta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .experienceHighlights {
+        grid-template-columns: 1fr;
     }
 
 
